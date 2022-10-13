@@ -4,6 +4,8 @@ import { useCoinsContext } from '../../provider/CoinsProvider';
 const Table = () => {
   const coins = useCoinsContext();
   return (
+    <div>
+        <h1>Tabla de detalles</h1>
         <table>
             <thead>
                 <tr>
@@ -26,6 +28,7 @@ const Table = () => {
                     ))}
             </tbody>
         </table>
+    </div>
   );
 };
 

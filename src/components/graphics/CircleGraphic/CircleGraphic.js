@@ -26,7 +26,6 @@ const CircleGraphic = () => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#ECA184'];
   return (
     <div>
-      <h1>Grafico circular</h1>
       <ResponsiveContainer width="100%" height={250}>
         <PieChart width={600} height={600}>
           <Pie

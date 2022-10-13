@@ -1,19 +1,21 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import CircleGraphic from './components/graphics/CircleGraphic/CircleGraphic';
-import LineGraphic from './components/graphics/LineGraphic/LineGraphic';
-import Table from './components/Table/Table';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import Main from './pages/Main/Main';
+import MarketDetails from './pages/MarketDetails/MarketDetails';
+import Transaction from './pages/Transaction/Transaction';
 
 function App() {
   return (
     <>
     <Navbar />
     <Routes>
-      <Route path='/*' element={<CircleGraphic />} />
-      <Route path='/mercado' element={<Table />} />
-      <Route path='/transacciones' element={<LineGraphic />} />
+      <Route path='/*' element={<Main />} />
+      <Route path='/mercado' element={<MarketDetails />} />
+      <Route path='/transacciones' element={<Transaction />} />
     </Routes>
+    <Footer />
     </>
   );
 }

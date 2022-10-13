@@ -1,22 +1,10 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import {
   PieChart, Pie, Cell, ResponsiveContainer, LabelList,
 } from 'recharts';
+import { useCoinsContext } from '../../../provider/CoinsProvider';
 
 const CircleGraphic = () => {
-  const [coins, setCoins] = useState([]);
-  const getCoins = async () => {
-    try {
-      const { data } = await axios('https://data.messari.io/api/v2/assets?limit=5');
-      setCoins(data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getCoins();
-  }, []);
+  const coins = useCoinsContext();
 
   const data = coins.map(coin => (
     { name: coin?.name, value: coin?.metrics?.marketcap?.current_marketcap_usd }));
@@ -41,8 +29,8 @@ const CircleGraphic = () => {
         <PieChart width={600} height={600}>
           <Pie
             data={data}
-            cx="50%"
-            cy="50%"
+            cx="60%"
+            cy="60%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={80}
@@ -53,7 +41,7 @@ const CircleGraphic = () => {
           >
             <LabelList dataKey="name" position="outside" stroke={COLORS}/>
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} verticalAnchor="end"/>
             ))}
           </Pie>
         </PieChart>

@@ -9,7 +9,6 @@ const CircleGraphic = () => {
   const getCoins = async () => {
     try {
       const { data } = await axios('https://data.messari.io/api/v2/assets?limit=5');
-      console.log(data);
       setCoins(data.data);
     } catch (error) {
       console.log(error);
@@ -21,7 +20,6 @@ const CircleGraphic = () => {
 
   const data = coins.map(coin => (
     { name: coin?.name, value: coin?.metrics?.marketcap?.current_marketcap_usd }));
-  console.log(data);
 
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({

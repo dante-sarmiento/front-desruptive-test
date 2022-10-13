@@ -1,5 +1,6 @@
 import './App.css';
 import CircleGraphic from './components/graphics/CircleGraphic/CircleGraphic';
+import LineGraphic from './components/graphics/LineGraphic/LineGraphic';
 import Table from './components/Table/Table';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <CircleGraphic />
       <Table />
+      <LineGraphic />
     </div>
   );
 }

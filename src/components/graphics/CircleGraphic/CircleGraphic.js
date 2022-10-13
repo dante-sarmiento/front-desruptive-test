@@ -29,8 +29,8 @@ const CircleGraphic = () => {
         <PieChart width={600} height={600}>
           <Pie
             data={data}
-            cx="60%"
-            cy="60%"
+            cx="35%"
+            cy="50%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={80}
@@ -41,7 +41,7 @@ const CircleGraphic = () => {
           >
             <LabelList dataKey="name" position="outside" stroke={COLORS}/>
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} verticalAnchor="end"/>
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
         </PieChart>

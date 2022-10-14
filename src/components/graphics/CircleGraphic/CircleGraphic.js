@@ -25,13 +25,13 @@ const CircleGraphic = () => {
   };
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#ECA184'];
   return (
-    <div>
+    <div className=''>
       <ResponsiveContainer width="100%" height={250}>
         <PieChart width={600} height={600}>
           <Pie
             data={data}
-            cx="35%"
-            cy="50%"
+            cx="50%"
+            cy="60%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={80}

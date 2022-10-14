@@ -5,7 +5,7 @@ const Table = () => {
   const coins = useCoinsContext();
   return (
     <div className=''>
-        <table className='table-auto w-full mt-6'>
+        <table data-testid="table-element" className='table-auto w-full mt-6'>
             <thead>
                 <tr className='text-left bg-slate-200'>
                     <th>#</th>

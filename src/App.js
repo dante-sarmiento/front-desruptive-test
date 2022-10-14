@@ -8,7 +8,7 @@ import Transaction from './pages/Transaction/Transaction';
 
 function App() {
   return (
-    <>
+    <div className='font-sans relative h-screen'>
     <Navbar />
     <Routes>
       <Route path='/*' element={<Main />} />
@@ -16,7 +16,7 @@ function App() {
       <Route path='/transacciones' element={<Transaction />} />
     </Routes>
     <Footer />
-    </>
+    </div>
   );
 }
 

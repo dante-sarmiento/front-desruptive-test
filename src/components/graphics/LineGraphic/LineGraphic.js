@@ -29,36 +29,38 @@ const LineGraphic = () => {
     lineHeight: '40px',
   };
   return (
-    <div>
-      <h1>Detalles de transacciones</h1>
-      <RadialBarChart
-        width={600}
-        height={300}
-        cx={150}
-        cy={130}
-        innerRadius={20}
-        outerRadius={140}
-        barSize={20}
-        data={data}
-      >
-        <RadialBar
-          minAngle={15}
-          label={{ position: 'insideStart', fill: '#fff' }}
-          background
-          clockWise
-          dataKey="uv"
-        />
-        <Legend
-          iconSize={10}
-          iconType="circle"
-          width={190}
-          height={140}
-          layout="vertical"
-          verticalAlign="bottom"
-          align="center"
-          wrapperStyle={style}
-        />
-      </RadialBarChart>
+    <div className='flex flex-col justify-center items-center my-5'>
+      <h1 className='text-blue-600 text-5xl text-center'>Detalles de transacciones</h1>
+      <div className='my-5'>
+        <RadialBarChart
+          width={600}
+          height={300}
+          cx={150}
+          cy={130}
+          innerRadius={20}
+          outerRadius={140}
+          barSize={20}
+          data={data}
+        >
+          <RadialBar
+            minAngle={15}
+            label={{ position: 'insideStart', fill: '#fff' }}
+            background
+            clockWise
+            dataKey="uv"
+          />
+          <Legend
+            iconSize={10}
+            iconType="circle"
+            width={190}
+            height={140}
+            layout="vertical"
+            verticalAlign="bottom"
+            align="center"
+            wrapperStyle={style}
+          />
+        </RadialBarChart>
+      </div>
     </div>
   );
 };
